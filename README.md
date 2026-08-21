@@ -1,5 +1,7 @@
 # Terraform AWS Security Baseline
 
+[![Terraform Security Baseline](https://github.com/ThiagoMicki1/terraform-aws-security-baseline/actions/workflows/terraform-security.yml/badge.svg)](https://github.com/ThiagoMicki1/terraform-aws-security-baseline/actions/workflows/terraform-security.yml)
+
 An intermediate Terraform portfolio lab that defines a small AWS security baseline: CloudTrail, S3 log storage, GuardDuty, AWS Config, IAM password policy, a least-privilege role example, and a restricted security group example.
 
 This is a learning lab. It is not a full production landing zone, and it does not deploy anything by default.
