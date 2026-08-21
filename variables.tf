@@ -14,6 +14,11 @@ variable "sample_account_id" {
   description = "Sample placeholder AWS account ID. Replace before any real deployment."
   type        = string
   default     = "123456789012"
+
+  validation {
+    condition     = can(regex("^[0-9]{12}$", var.sample_account_id))
+    error_message = "sample_account_id must be a 12-digit AWS account ID placeholder."
+  }
 }
 
 variable "cloudtrail_bucket_name" {
@@ -26,6 +31,11 @@ variable "trusted_admin_cidr" {
   description = "Example trusted CIDR for the security group. Uses documentation IP space by default."
   type        = string
   default     = "203.0.113.10/32"
+
+  validation {
+    condition     = can(cidrhost(var.trusted_admin_cidr, 0))
+    error_message = "trusted_admin_cidr must be a valid CIDR block."
+  }
 }
 
 variable "example_vpc_id" {

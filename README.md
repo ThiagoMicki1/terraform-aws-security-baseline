@@ -44,11 +44,14 @@ Do not run `terraform apply` as part of the normal portfolio workflow.
 
 More detail: [docs/security-controls.md](docs/security-controls.md)
 
+Design notes: [docs/decisions.md](docs/decisions.md)
+
 ## Folder Structure
 
 ```text
 terraform-aws-security-baseline/
 |-- .github/workflows/terraform-security.yml
+|-- docs/decisions.md
 |-- docs/security-controls.md
 |-- reports/
 |-- aws-config.tf
@@ -118,6 +121,12 @@ Then verify in the AWS Console that S3 buckets, CloudWatch log groups, GuardDuty
 ## What I Struggled With
 
 The main challenge was keeping the repo realistic without pretending it is production-ready. I chose AWS-managed encryption in a couple places because it keeps the lab readable and lower-complexity, but I documented where a production version should consider customer-managed KMS keys.
+
+## Interview Talking Points
+
+- Why I kept this validation-only and left deployment as an intentional future step.
+- How CloudTrail, GuardDuty, AWS Config, and S3 log protection support detection and investigation.
+- Where I would add customer-managed KMS keys, Config rules, or multi-account controls in a real environment.
 
 ## Future Improvements
 
