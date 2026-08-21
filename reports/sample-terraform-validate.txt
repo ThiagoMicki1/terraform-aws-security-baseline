@@ -1,0 +1,16 @@
+Sample Terraform validation output
+==================================
+
+$ terraform fmt -recursive
+
+$ terraform init -backend=false
+Terraform has been successfully initialized!
+
+$ terraform validate
+Success! The configuration is valid.
+
+$ terraform fmt -recursive -check
+No formatting changes required.
+
+Safety note:
+No terraform apply was run. No AWS resources were created.

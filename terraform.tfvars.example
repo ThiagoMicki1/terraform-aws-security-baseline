@@ -1,0 +1,9 @@
+# Safe placeholder values only.
+# Copy to terraform.tfvars for a future manual deployment, then replace values.
+
+project_name           = "terraform-aws-security-baseline"
+aws_region             = "us-east-1"
+sample_account_id      = "123456789012"
+cloudtrail_bucket_name = "sample-security-baseline-logs-123456789012"
+trusted_admin_cidr     = "203.0.113.10/32"
+example_vpc_id         = "vpc-00000000000000000"

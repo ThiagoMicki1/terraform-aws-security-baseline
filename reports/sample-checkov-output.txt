@@ -1,0 +1,13 @@
+Sample Checkov output
+=====================
+
+$ checkov -d . --config-file .checkov.yml
+
+terraform scan results:
+
+Passed checks: 78
+Failed checks: 0
+Skipped checks: 9 documented learning-lab tradeoffs for AWS-managed encryption, no SNS alerting, no cross-region replication, single-account GuardDuty, and an unattached example security group.
+
+Safety note:
+This is sanitized sample output for a portfolio lab. It contains no real AWS account IDs, ARNs, credentials, or private data.
