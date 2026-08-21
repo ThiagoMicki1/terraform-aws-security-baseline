@@ -121,16 +121,3 @@ The main challenge was keeping the repo realistic without pretending it is produ
 
 - Add a customer-managed KMS key version after practicing key policies.
 - Add a small set of AWS Config managed rules with a clearer cost estimate.
-
-## Commands
-
-```bash
-terraform fmt -recursive
-terraform init -backend=false
-terraform validate
-checkov -d . --config-file .checkov.yml
-git init -b main
-git add .
-git commit -m "Add Terraform AWS security baseline"
-gh repo create terraform-aws-security-baseline --public --description "Terraform portfolio lab for an AWS security baseline with CloudTrail, GuardDuty, AWS Config, least privilege, and Checkov scanning." --source . --remote origin --push
-```
