@@ -41,6 +41,7 @@ Do not run `terraform apply` as part of the normal portfolio workflow.
 | Least-privilege role example | Shows scoped read-only access instead of broad admin access. |
 | Restricted security group | Avoids inbound access from `0.0.0.0/0`. |
 | AWS Config | Records resource configuration history. |
+| AWS Config managed rules | Checks for public-readable S3 buckets and IAM users without MFA. |
 
 More detail: [docs/security-controls.md](docs/security-controls.md)
 
@@ -99,7 +100,7 @@ Then replace sample values. `terraform.tfvars` is gitignored because real deploy
 
 ## Cost Warning
 
-This repo is free to validate locally, but future deployment can create AWS costs. GuardDuty, AWS Config, CloudTrail log delivery, CloudWatch Logs, and S3 storage can all have charges depending on usage and retention.
+This repo is free to validate locally, but future deployment can create AWS costs. GuardDuty, AWS Config, AWS Config managed rule evaluations, CloudTrail log delivery, CloudWatch Logs, and S3 storage can all have charges depending on usage and retention.
 
 ## Cleanup If Deployed Later
 
@@ -131,4 +132,4 @@ The main challenge was keeping the repo realistic without pretending it is produ
 ## Future Improvements
 
 - Add a customer-managed KMS key version after practicing key policies.
-- Add a small set of AWS Config managed rules with a clearer cost estimate.
+- Add a more detailed cost estimate after testing a plan in a disposable AWS sandbox.

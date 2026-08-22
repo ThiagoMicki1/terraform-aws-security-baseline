@@ -44,3 +44,25 @@ resource "aws_config_configuration_recorder_status" "baseline" {
 
   depends_on = [aws_config_delivery_channel.baseline]
 }
+
+resource "aws_config_config_rule" "s3_public_read_prohibited" {
+  name = "${var.project_name}-s3-public-read-prohibited"
+
+  source {
+    owner             = "AWS"
+    source_identifier = "S3_BUCKET_PUBLIC_READ_PROHIBITED"
+  }
+
+  depends_on = [aws_config_configuration_recorder_status.baseline]
+}
+
+resource "aws_config_config_rule" "iam_user_mfa_enabled" {
+  name = "${var.project_name}-iam-user-mfa-enabled"
+
+  source {
+    owner             = "AWS"
+    source_identifier = "IAM_USER_MFA_ENABLED"
+  }
+
+  depends_on = [aws_config_configuration_recorder_status.baseline]
+}

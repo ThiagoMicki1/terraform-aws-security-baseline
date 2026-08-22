@@ -62,4 +62,11 @@ AWS Config records resource configuration history and delivers snapshots to the 
 
 Protects against: not knowing when resource configuration changed.
 
-Cost note: AWS Config can create meaningful cost because it records configuration items.
+The baseline also includes two AWS managed rules:
+
+- `S3_BUCKET_PUBLIC_READ_PROHIBITED`
+- `IAM_USER_MFA_ENABLED`
+
+Protects against: public-readable S3 buckets and IAM users without MFA going unnoticed.
+
+Cost note: AWS Config can create meaningful cost because it records configuration items and evaluates managed rules. This is why the repo stays validation-only by default.
